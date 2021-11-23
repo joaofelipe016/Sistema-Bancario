@@ -5,6 +5,7 @@ public class Correntista {
 	private static int proximoCodigo = 1;
 	private String nome;
 	private int codigo;
+	private int numero;
 	
 	public int getProximoCodigo() {
 		
@@ -12,10 +13,11 @@ public class Correntista {
 		
 	}
 	
-	public Correntista(String nome) {
+	public Correntista(String nome, int numero) {
 		
 		this.nome = nome;
 		this.codigo = getProximoCodigo();
+		this.numero = numero;
 		
 	}
 	
@@ -40,6 +42,18 @@ public class Correntista {
 	public void setNome(String nome) {
 		
 		this.nome = nome;
+		
+	}
+	
+	public int getNumero() {
+		
+		return numero;
+		
+	}
+	
+	public void setNumero(int numero) {
+		
+		this.numero = numero;
 		
 	}
 	
