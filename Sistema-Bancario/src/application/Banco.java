@@ -2,7 +2,7 @@ package application;
 
 import backgroud.Correntista;
 
-public class Banco {
+public class Banco { // nova linha
 
 	public static void main(String[] main) {
 		
