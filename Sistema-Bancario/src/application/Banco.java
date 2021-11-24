@@ -3,7 +3,7 @@ package application;
 import java.util.Scanner;
 import backgroud.Correntista;
 import backgroud.CorrentistaVip;
-import backgroud.CorrentistaEmpresarial;
+import backgroud.CorrentistaJuridico;
 
 public class Banco {
 
@@ -23,21 +23,37 @@ public class Banco {
 		
 	}
 	
-	public static void Empresa() {
+	public static void Juridico() {
 		
-		CorrentistaEmpresarial empresa = new CorrentistaEmpresarial("José", 91452266, "Marido de aluguel", "José"); 
+		CorrentistaJuridico juridico = new CorrentistaJuridico("José", 91452266, "Marido de aluguel"); 
 		
-		System.out.println("Codigo: " + empresa.getCodigo() + " Nome: " + empresa.getNome() + " numero telefonico: " + empresa.getNumero() + " empresa: " + empresa.getNomeEmpresa() + " Nome Responsavel: " + empresa.getNomeResponsavel());
+		System.out.println("Codigo: " + juridico.getCodigo() + " Nome: " + juridico.getNome() + " numero telefonico: " + juridico.getNumero() + " empresa: " + juridico.getNomeEmpresa());
 		
 	}
 	
 	
 	public static void main(String[] main) {
-
-		Fisico();
-		Fisico();
-		Vip();
-		Empresa();
 		
+		Scanner sc = new Scanner(System.in);  
+		
+		System.out.println("Escolha a conta de sua preferencia: ");	
+		
+		String resp = sc.next();
+		
+		switch (resp) {
+		
+		case "F": 
+			
+			Fisico();
+		
+		case "V":
+		
+			Vip();
+			
+		case "J":
+		
+			Juridico();
+		
+		}
 	}
 }
