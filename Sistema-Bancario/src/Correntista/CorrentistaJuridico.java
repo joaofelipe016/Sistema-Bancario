@@ -1,6 +1,6 @@
-package backgroud;
+package Correntista;
 
-public class CorrentistaJuridico extends Correntista {
+public class CorrentistaJuridico extends CorrentistaFisico {
 
 	private String nomeEmpresa;
 	

@@ -1,6 +1,6 @@
-package backgroud;
+package Correntista;
 
-public class Correntista {
+public class CorrentistaFisico {
 
 	private static int proximoCodigo = 1;
 	private String nome;
@@ -13,7 +13,7 @@ public class Correntista {
 		
 	}
 	
-	public Correntista(String nome, int numero) {
+	public CorrentistaFisico(String nome, int numero) {
 		
 		this.nome = nome;
 		this.codigo = getProximoCodigo();

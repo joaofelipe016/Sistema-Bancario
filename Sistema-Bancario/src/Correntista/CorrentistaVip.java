@@ -1,6 +1,6 @@
-package backgroud;
+package Correntista;
 
-public class CorrentistaVip extends Correntista {
+public class CorrentistaVip extends CorrentistaFisico {
 
 	
 	
