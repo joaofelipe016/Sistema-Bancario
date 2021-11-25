@@ -1,23 +1,48 @@
 package application;
 
 import java.util.Scanner;
-import backgroud.Correntista;
-import backgroud.CorrentistaVip;
-import backgroud.CorrentistaJuridico;
+import Correntista.CorrentistaFisico;
+import Correntista.CorrentistaVip;
+import Correntista.CorrentistaJuridico;
 
 public class Banco {
 
+	
 	public static void Fisico() {
 		
-		Correntista fisico = new Correntista("josé", 544551513);
+		Scanner sc1 = new Scanner(System.in);
+		
+		System.out.print("Nome: ");
+		
+		String nome = sc1.next();
+		
+		Scanner sc2 = new Scanner(System.in);
+		
+		System.out.print("Numero telefonico: ");
+		
+		int numero = sc2.nextInt();
+		
+		CorrentistaFisico fisico = new CorrentistaFisico(nome, numero);
 		
 		System.out.println("Codigo: " + fisico.getCodigo() + " Nome: " + fisico.getNome() + " numero telefonico: " + fisico.getNumero());
-	
+		
 	}
 	
 	public static void Vip() {
+			
+		Scanner sc1 = new Scanner(System.in);
 		
-		CorrentistaVip vip = new CorrentistaVip("José", 91452266); 
+		System.out.print("Nome: ");
+		
+		String nome = sc1.next();
+		
+		Scanner sc2 = new Scanner(System.in);
+		
+		System.out.print("Numero telefonico: ");
+		
+		int numero = sc2.nextInt();
+		
+		CorrentistaVip vip = new CorrentistaVip(nome, numero); 
 		
 		System.out.println("Codigo: " + vip.getCodigo() + " Nome: " + vip.getNome() + " numero telefonico: " + vip.getNumero());
 		
@@ -25,7 +50,25 @@ public class Banco {
 	
 	public static void Juridico() {
 		
-		CorrentistaJuridico juridico = new CorrentistaJuridico("José", 91452266, "Marido de aluguel"); 
+		Scanner sc1 = new Scanner(System.in);
+		
+		System.out.print("Nome: ");
+		
+		String nome = sc1.next();
+		
+		Scanner sc2 = new Scanner(System.in);
+		
+		System.out.print("Numero telefonico: ");
+		
+		int numero = sc2.nextInt();
+		
+		Scanner sc3 = new Scanner(System.in);
+		
+		System.out.print("Nome da empresa: ");
+		
+		String nomeEmpresa = sc3.next();
+		
+		CorrentistaJuridico juridico = new CorrentistaJuridico(nome, numero, nomeEmpresa); 
 		
 		System.out.println("Codigo: " + juridico.getCodigo() + " Nome: " + juridico.getNome() + " numero telefonico: " + juridico.getNumero() + " empresa: " + juridico.getNomeEmpresa());
 		
@@ -33,8 +76,12 @@ public class Banco {
 	
 	
 	public static void main(String[] main) {
+	
+	boolean x = true;
 		
-		Scanner sc = new Scanner(System.in);  
+	while ( x == true) {
+		
+		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Escolha a conta de sua preferencia: ");	
 		
@@ -45,15 +92,28 @@ public class Banco {
 		case "F": 
 			
 			Fisico();
+			x = false;
+			break;
 		
 		case "V":
 		
 			Vip();
+			x = false;
+			break;
 			
 		case "J":
 		
 			Juridico();
+			x = false;
+			break;
 		
+		default:
+		
+			System.out.println("ERRO. Tipo de conta inexistente, tente novamente");
+			
+			break;
+		
+			}
 		}
 	}
 }
