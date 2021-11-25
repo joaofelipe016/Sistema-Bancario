@@ -1,13 +1,28 @@
 package Correntista;
 
-public class CorrentistaJuridico extends CorrentistaFisico {
-
-	private String nomeEmpresa;
+public class CorrentistaJuridico extends Correntista {
 	
-	public CorrentistaJuridico(String nome,int numero , String nomeEmpresa) { 
+	private static int proximoCodigoJuridico = 2001;
+	private String nomeEmpresa;
+	private int codigoJuridico;
+	
+	public int getProximoCodigoJuridico() {
 		
-		super(nome, numero);
+		return proximoCodigoJuridico++;
+		
+	}
+	
+	public CorrentistaJuridico(String nome, int numero, String nomeEmpresa, int cpf) { 
+		
+		super(nome, numero, cpf);
 		this.nomeEmpresa = nomeEmpresa;
+		this.codigoJuridico = getProximoCodigoJuridico();
+		
+	}
+	
+	public int getCodigoJuridico() {
+		
+		return codigoJuridico;
 		
 	}
 	
