@@ -23,7 +23,7 @@ public class Banco {
 			
 			Scanner sc3 = new Scanner(System.in);
 			
-			System.out.print("Numero telefonico: ");
+			System.out.print("CPF: ");
 			
 			int cpf = sc3.nextInt();
 			
@@ -92,45 +92,42 @@ public class Banco {
 		}
 	
 	public static void main(String[] main) {
-	
-		while (true) {
 		
-			boolean x = true;
+		boolean x = true;
+			
+		while ( x == true) {
+			
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("Escolha a conta de sua preferencia: ");	
+			
+			String resp = sc.next();
+			
+			switch (resp) {
+			
+			case "F": 
 				
-			while ( x == true) {
+				Fisico();
+				x = false;
+				break;
+			
+			case "V":
+			
+				Vip();
+				x = false;
+				break;
 				
-				Scanner sc = new Scanner(System.in);
+			case "J":
+			
+				Juridico();
+				x = false;
+				break;
+			
+			default:
+			
+				System.out.println("ERRO. Tipo de conta inexistente, tente novamente");
 				
-				System.out.println("Escolha a conta de sua preferencia: ");	
-				
-				String resp = sc.next();
-				
-				switch (resp) {
-				
-				case "F": 
-					
-					Fisico();
-					x = false;
-					break;
-				
-				case "V":
-				
-					Vip();
-					x = false;
-					break;
-					
-				case "J":
-				
-					Juridico();
-					x = false;
-					break;
-				
-				default:
-				
-					System.out.println("ERRO. Tipo de conta inexistente, tente novamente");
-					
-					break;
-				}	
+				break;
 			}
 		}
 	}
