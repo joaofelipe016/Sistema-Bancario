@@ -1,11 +1,8 @@
 package Correntista;
+public class CorrentistaFisico extends Correntista{
 
-public class CorrentistaFisico {
-
-	private static int proximoCodigo = 1;
-	private String nome;
+	private static int proximoCodigo = 1001;
 	private int codigo;
-	private int numero;
 	
 	public int getProximoCodigo() {
 		
@@ -13,11 +10,10 @@ public class CorrentistaFisico {
 		
 	}
 	
-	public CorrentistaFisico(String nome, int numero) {
+	public CorrentistaFisico(String nome, int numero, int cpf) {
 		
-		this.nome = nome;
+		super(nome, numero, cpf);
 		this.codigo = getProximoCodigo();
-		this.numero = numero;
 		
 	}
 	
@@ -30,30 +26,6 @@ public class CorrentistaFisico {
 	public void setCodigo(int codigo) {
 		
 		this.codigo = codigo;
-		
-	}
-
-	public String getNome() {
-		
-		return nome;
-		
-	}
-	
-	public void setNome(String nome) {
-		
-		this.nome = nome;
-		
-	}
-	
-	public int getNumero() {
-		
-		return numero;
-		
-	}
-	
-	public void setNumero(int numero) {
-		
-		this.numero = numero;
 		
 	}
 	
