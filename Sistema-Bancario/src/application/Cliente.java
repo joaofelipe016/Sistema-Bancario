@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import Cadastro.Cadastro;
 
-public class Banco {
+public class Cliente {
 
 	static Cadastro cd = new Cadastro();
 	
